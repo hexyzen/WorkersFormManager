@@ -1,18 +1,21 @@
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\bin\Debug\WorkersFormsManager.exe.config
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\bin\Debug\WorkersFormsManager.exe
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\bin\Debug\WorkersFormsManager.pdb
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\bin\Debug\MaterialSkin.dll
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.csproj.AssemblyReference.cache
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.Home.resources
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.Login.resources
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.Properties.Resources.resources
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.Splash.resources
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.Worker.resources
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.csproj.GenerateResource.cache
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.csproj.CoreCompileInputs.cache
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.exe
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.pdb
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\bin\Debug\Guna.Charts.WinForms.dll
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\bin\Debug\Guna.UI2.dll
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.ViewWorkers.resources
-C:\Users\Roman Kostiuk\source\repos\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.Salary.resources
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\bin\Debug\WorkerDB1.mdf
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\bin\Debug\WorkersFormsManager.exe.config
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\bin\Debug\WorkersFormsManager.exe
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\bin\Debug\WorkersFormsManager.pdb
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\bin\Debug\Guna.Charts.WinForms.dll
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\bin\Debug\Guna.UI2.dll
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\bin\Debug\MaterialSkin.dll
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.csproj.AssemblyReference.cache
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.Home.resources
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.Login.resources
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.Properties.Resources.resources
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.Salary.resources
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.Splash.resources
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.Task.resources
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.ViewWorkers.resources
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.Worker.resources
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.csproj.GenerateResource.cache
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.csproj.CoreCompileInputs.cache
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersF.BE599930.Up2Date
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.exe
+C:\WorkersFormManager\WorkersFormsManager\WorkersFormsManager\obj\Debug\WorkersFormsManager.pdb

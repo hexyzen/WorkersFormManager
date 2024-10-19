@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -34,17 +35,43 @@ namespace WorkersFormsManager
 
         private void materialButton1_Click(object sender, EventArgs e)
         {
-            if (UserIdTb.Text == "Admin" && PasswordTb.Text == "Admin")
+            // Capture the entered UserId
+            string enteredId = UserIdTb.Text;
+
+            if (enteredId == "admin")
             {
+                // If it's admin, show the regular Home form
                 this.Hide();
-                Home home = new Home();
+                Home home = new Home(isAdmin: true);
                 home.Show();
             }
             else
             {
-                MessageBox.Show("Incorrect login or password");
+                // Check if the entered ID exists in the database
+                using (SqlConnection conn = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Program Files (x86)\Roman Kostiuk\Worker Manager\WorkerDB.mdf;Integrated Security=True;Connect Timeout=30"))
+                {
+                    conn.Open();
+                    string query = "SELECT COUNT(*) FROM Worker WHERE WorkerId = @WorkerId";
+
+                    SqlCommand cmd = new SqlCommand(query, conn);
+                    cmd.Parameters.AddWithValue("@WorkerId", enteredId);
+
+                    int workerCount = (int)cmd.ExecuteScalar();
+
+                    if (workerCount > 0)
+                    {
+                        // If the worker ID exists, show a limited Home form (with only Tasks visible)
+                        this.Hide();
+                        Home home = new Home(isAdmin: false);
+                        home.Show();
+                    }
+                    else
+                    {
+                        // If neither admin nor worker ID is valid
+                        MessageBox.Show("Invalid User ID");
+                    }
+                }
             }
-  
         }
 
         private void materialButton2_Click(object sender, EventArgs e)

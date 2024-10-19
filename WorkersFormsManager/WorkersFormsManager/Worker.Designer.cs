@@ -1,4 +1,6 @@
 ﻿
+using Guna.UI2.WinForms;
+
 namespace WorkersFormsManager
 {
     partial class Worker
@@ -40,11 +42,7 @@ namespace WorkersFormsManager
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton2 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
-            this.label9 = new System.Windows.Forms.Label();
-            this.WorkerGenderCb = new MaterialSkin.Controls.MaterialComboBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.WorkerEduCb = new MaterialSkin.Controls.MaterialComboBox();
             this.WorkersDOB = new System.Windows.Forms.DateTimePicker();
             this.WorkerSeatCb = new MaterialSkin.Controls.MaterialComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -68,9 +66,10 @@ namespace WorkersFormsManager
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label1.Location = new System.Drawing.Point(85, 34);
+            this.label1.Location = new System.Drawing.Point(113, 42);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(188, 26);
+            this.label1.Size = new System.Drawing.Size(241, 34);
             this.label1.TabIndex = 2;
             this.label1.Text = "Worker Manager";
             // 
@@ -82,11 +81,7 @@ namespace WorkersFormsManager
             this.panel1.Controls.Add(this.materialButton3);
             this.panel1.Controls.Add(this.materialButton2);
             this.panel1.Controls.Add(this.materialButton1);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.WorkerGenderCb);
-            this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.WorkerEduCb);
             this.panel1.Controls.Add(this.WorkersDOB);
             this.panel1.Controls.Add(this.WorkerSeatCb);
             this.panel1.Controls.Add(this.label6);
@@ -98,10 +93,12 @@ namespace WorkersFormsManager
             this.panel1.Controls.Add(this.WorkerNameTb);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.WorkerIdTb);
-            this.panel1.Location = new System.Drawing.Point(0, 83);
+            this.panel1.Location = new System.Drawing.Point(0, 102);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1020, 454);
+            this.panel1.Size = new System.Drawing.Size(1360, 559);
             this.panel1.TabIndex = 3;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // WorkerDGV
             // 
@@ -122,6 +119,7 @@ namespace WorkersFormsManager
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.WorkerDGV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.WorkerDGV.ColumnHeadersHeight = 25;
+            this.WorkerDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
@@ -132,35 +130,36 @@ namespace WorkersFormsManager
             this.WorkerDGV.DefaultCellStyle = dataGridViewCellStyle3;
             this.WorkerDGV.EnableHeadersVisualStyles = false;
             this.WorkerDGV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.WorkerDGV.Location = new System.Drawing.Point(401, 12);
+            this.WorkerDGV.Location = new System.Drawing.Point(535, 15);
+            this.WorkerDGV.Margin = new System.Windows.Forms.Padding(4);
             this.WorkerDGV.Name = "WorkerDGV";
             this.WorkerDGV.RowHeadersVisible = false;
+            this.WorkerDGV.RowHeadersWidth = 51;
             this.WorkerDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.WorkerDGV.Size = new System.Drawing.Size(606, 424);
+            this.WorkerDGV.Size = new System.Drawing.Size(808, 522);
             this.WorkerDGV.TabIndex = 27;
-            this.WorkerDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.WorkerDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.WorkerDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.WorkerDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.WorkerDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.WorkerDGV.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.WorkerDGV.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.WorkerDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.WorkerDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.WorkerDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.WorkerDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.WorkerDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            this.WorkerDGV.ThemeStyle.HeaderStyle.Height = 25;
-            this.WorkerDGV.ThemeStyle.ReadOnly = false;
-            this.WorkerDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.WorkerDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.WorkerDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            this.WorkerDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.WorkerDGV.ThemeStyle.RowsStyle.Height = 22;
-            this.WorkerDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.WorkerDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.WorkerDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.WorkerDGV_CellContentClick);
-            // 
+            //this.WorkerDGV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            //this.WorkerDGV.ThemeStyle.AlternatingRowsStyle.Font = null;
+            //this.WorkerDGV.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            //this.WorkerDGV.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            //this.WorkerDGV.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            //this.WorkerDGV.ThemeStyle.BackColor = System.Drawing.Color.White;
+            //this.WorkerDGV.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            //this.WorkerDGV.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            //this.WorkerDGV.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            //this.WorkerDGV.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            //this.WorkerDGV.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            //this.WorkerDGV.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            //this.WorkerDGV.ThemeStyle.HeaderStyle.Height = 25;
+            //this.WorkerDGV.ThemeStyle.ReadOnly = false;
+            //this.WorkerDGV.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            //this.WorkerDGV.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            //this.WorkerDGV.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            //this.WorkerDGV.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            //this.WorkerDGV.ThemeStyle.RowsStyle.Height = 22;
+            //this.WorkerDGV.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            //this.WorkerDGV.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            //// 
             // materialButton4
             // 
             this.materialButton4.AutoSize = false;
@@ -173,11 +172,11 @@ namespace WorkersFormsManager
             this.materialButton4.ForeColor = System.Drawing.Color.White;
             this.materialButton4.HighEmphasis = true;
             this.materialButton4.Icon = null;
-            this.materialButton4.Location = new System.Drawing.Point(293, 383);
-            this.materialButton4.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton4.Location = new System.Drawing.Point(391, 471);
+            this.materialButton4.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.materialButton4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton4.Name = "materialButton4";
-            this.materialButton4.Size = new System.Drawing.Size(88, 36);
+            this.materialButton4.Size = new System.Drawing.Size(117, 44);
             this.materialButton4.TabIndex = 25;
             this.materialButton4.Text = "Main Page";
             this.materialButton4.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -197,11 +196,11 @@ namespace WorkersFormsManager
             this.materialButton3.ForeColor = System.Drawing.Color.White;
             this.materialButton3.HighEmphasis = true;
             this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(208, 383);
-            this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton3.Location = new System.Drawing.Point(277, 471);
+            this.materialButton3.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton3.Name = "materialButton3";
-            this.materialButton3.Size = new System.Drawing.Size(64, 36);
+            this.materialButton3.Size = new System.Drawing.Size(85, 44);
             this.materialButton3.TabIndex = 24;
             this.materialButton3.Text = "Delete";
             this.materialButton3.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -221,11 +220,11 @@ namespace WorkersFormsManager
             this.materialButton2.ForeColor = System.Drawing.Color.White;
             this.materialButton2.HighEmphasis = true;
             this.materialButton2.Icon = null;
-            this.materialButton2.Location = new System.Drawing.Point(119, 383);
-            this.materialButton2.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton2.Location = new System.Drawing.Point(159, 471);
+            this.materialButton2.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.materialButton2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton2.Name = "materialButton2";
-            this.materialButton2.Size = new System.Drawing.Size(64, 36);
+            this.materialButton2.Size = new System.Drawing.Size(85, 44);
             this.materialButton2.TabIndex = 23;
             this.materialButton2.Text = "Edit";
             this.materialButton2.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -245,11 +244,11 @@ namespace WorkersFormsManager
             this.materialButton1.ForeColor = System.Drawing.Color.White;
             this.materialButton1.HighEmphasis = true;
             this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(31, 383);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.Location = new System.Drawing.Point(41, 471);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(5, 7, 5, 7);
             this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton1.Name = "materialButton1";
-            this.materialButton1.Size = new System.Drawing.Size(63, 36);
+            this.materialButton1.Size = new System.Drawing.Size(84, 44);
             this.materialButton1.TabIndex = 22;
             this.materialButton1.Text = "Add";
             this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -257,96 +256,25 @@ namespace WorkersFormsManager
             this.materialButton1.UseVisualStyleBackColor = false;
             this.materialButton1.Click += new System.EventHandler(this.materialButton1_Click_1);
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(253, 105);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 24);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Gender";
-            // 
-            // WorkerGenderCb
-            // 
-            this.WorkerGenderCb.AutoResize = false;
-            this.WorkerGenderCb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.WorkerGenderCb.Depth = 0;
-            this.WorkerGenderCb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.WorkerGenderCb.DropDownHeight = 174;
-            this.WorkerGenderCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.WorkerGenderCb.DropDownWidth = 121;
-            this.WorkerGenderCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.WorkerGenderCb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.WorkerGenderCb.FormattingEnabled = true;
-            this.WorkerGenderCb.IntegralHeight = false;
-            this.WorkerGenderCb.ItemHeight = 43;
-            this.WorkerGenderCb.Items.AddRange(new object[] {
-            "Male ",
-            "Female"});
-            this.WorkerGenderCb.Location = new System.Drawing.Point(208, 131);
-            this.WorkerGenderCb.MaxDropDownItems = 4;
-            this.WorkerGenderCb.MouseState = MaterialSkin.MouseState.OUT;
-            this.WorkerGenderCb.Name = "WorkerGenderCb";
-            this.WorkerGenderCb.Size = new System.Drawing.Size(167, 49);
-            this.WorkerGenderCb.TabIndex = 20;
-            this.WorkerGenderCb.SelectedIndexChanged += new System.EventHandler(this.WorkerGenderTb_SelectedIndexChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(244, 273);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(95, 24);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Education";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(235, 186);
+            this.label7.Location = new System.Drawing.Point(331, 262);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(110, 24);
+            this.label7.Size = new System.Drawing.Size(144, 29);
             this.label7.TabIndex = 18;
             this.label7.Text = "Date of Birth";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // WorkerEduCb
-            // 
-            this.WorkerEduCb.AutoResize = false;
-            this.WorkerEduCb.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.WorkerEduCb.Depth = 0;
-            this.WorkerEduCb.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
-            this.WorkerEduCb.DropDownHeight = 174;
-            this.WorkerEduCb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.WorkerEduCb.DropDownWidth = 121;
-            this.WorkerEduCb.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
-            this.WorkerEduCb.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.WorkerEduCb.FormattingEnabled = true;
-            this.WorkerEduCb.IntegralHeight = false;
-            this.WorkerEduCb.ItemHeight = 43;
-            this.WorkerEduCb.Items.AddRange(new object[] {
-            "LowTech",
-            "MidTech",
-            "HighTech",
-            "Courses",
-            "None",
-            "Other"});
-            this.WorkerEduCb.Location = new System.Drawing.Point(208, 303);
-            this.WorkerEduCb.MaxDropDownItems = 4;
-            this.WorkerEduCb.MouseState = MaterialSkin.MouseState.OUT;
-            this.WorkerEduCb.Name = "WorkerEduCb";
-            this.WorkerEduCb.Size = new System.Drawing.Size(167, 49);
-            this.WorkerEduCb.TabIndex = 17;
-            // 
             // WorkersDOB
             // 
             this.WorkersDOB.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.WorkersDOB.Location = new System.Drawing.Point(195, 213);
+            this.WorkersDOB.Location = new System.Drawing.Point(262, 324);
+            this.WorkersDOB.Margin = new System.Windows.Forms.Padding(4);
             this.WorkersDOB.Name = "WorkersDOB";
-            this.WorkersDOB.Size = new System.Drawing.Size(200, 29);
+            this.WorkersDOB.Size = new System.Drawing.Size(265, 34);
             this.WorkersDOB.TabIndex = 16;
             // 
             // WorkerSeatCb
@@ -369,30 +297,34 @@ namespace WorkersFormsManager
             "Middle Developer",
             "Senior Developer",
             "Reception"});
-            this.WorkerSeatCb.Location = new System.Drawing.Point(16, 212);
+            this.WorkerSeatCb.Location = new System.Drawing.Point(277, 162);
+            this.WorkerSeatCb.Margin = new System.Windows.Forms.Padding(4);
             this.WorkerSeatCb.MaxDropDownItems = 4;
             this.WorkerSeatCb.MouseState = MaterialSkin.MouseState.OUT;
             this.WorkerSeatCb.Name = "WorkerSeatCb";
-            this.WorkerSeatCb.Size = new System.Drawing.Size(167, 49);
+            this.WorkerSeatCb.Size = new System.Drawing.Size(221, 49);
             this.WorkerSeatCb.TabIndex = 15;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(74, 186);
+            this.label6.Location = new System.Drawing.Point(365, 130);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(47, 24);
+            this.label6.Size = new System.Drawing.Size(62, 29);
             this.label6.TabIndex = 14;
             this.label6.Text = "Seat";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(32, 273);
+            this.label5.Location = new System.Drawing.Point(36, 262);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 24);
+            this.label5.Size = new System.Drawing.Size(176, 29);
             this.label5.TabIndex = 13;
             this.label5.Text = "Phone Number";
             // 
@@ -401,12 +333,13 @@ namespace WorkersFormsManager
             this.WorkerPhoneTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.WorkerPhoneTb.Depth = 0;
             this.WorkerPhoneTb.Font = new System.Drawing.Font("Roboto", 12F);
-            this.WorkerPhoneTb.Location = new System.Drawing.Point(16, 302);
+            this.WorkerPhoneTb.Location = new System.Drawing.Point(21, 324);
+            this.WorkerPhoneTb.Margin = new System.Windows.Forms.Padding(4);
             this.WorkerPhoneTb.MaxLength = 50;
             this.WorkerPhoneTb.MouseState = MaterialSkin.MouseState.OUT;
             this.WorkerPhoneTb.Multiline = false;
             this.WorkerPhoneTb.Name = "WorkerPhoneTb";
-            this.WorkerPhoneTb.Size = new System.Drawing.Size(167, 50);
+            this.WorkerPhoneTb.Size = new System.Drawing.Size(223, 50);
             this.WorkerPhoneTb.TabIndex = 12;
             this.WorkerPhoneTb.Text = "";
             this.WorkerPhoneTb.TextChanged += new System.EventHandler(this.materialTextBox4_TextChanged);
@@ -415,9 +348,10 @@ namespace WorkersFormsManager
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(61, 106);
+            this.label4.Location = new System.Drawing.Point(81, 130);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 24);
+            this.label4.Size = new System.Drawing.Size(102, 29);
             this.label4.TabIndex = 11;
             this.label4.Text = "Address";
             // 
@@ -426,12 +360,13 @@ namespace WorkersFormsManager
             this.WorkerAddressTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.WorkerAddressTb.Depth = 0;
             this.WorkerAddressTb.Font = new System.Drawing.Font("Roboto", 12F);
-            this.WorkerAddressTb.Location = new System.Drawing.Point(16, 132);
+            this.WorkerAddressTb.Location = new System.Drawing.Point(21, 162);
+            this.WorkerAddressTb.Margin = new System.Windows.Forms.Padding(4);
             this.WorkerAddressTb.MaxLength = 50;
             this.WorkerAddressTb.MouseState = MaterialSkin.MouseState.OUT;
             this.WorkerAddressTb.Multiline = false;
             this.WorkerAddressTb.Name = "WorkerAddressTb";
-            this.WorkerAddressTb.Size = new System.Drawing.Size(167, 50);
+            this.WorkerAddressTb.Size = new System.Drawing.Size(223, 50);
             this.WorkerAddressTb.TabIndex = 10;
             this.WorkerAddressTb.Text = "";
             // 
@@ -439,9 +374,10 @@ namespace WorkersFormsManager
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(235, 12);
+            this.label3.Location = new System.Drawing.Point(313, 15);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(127, 24);
+            this.label3.Size = new System.Drawing.Size(162, 29);
             this.label3.TabIndex = 9;
             this.label3.Text = "Worker Name";
             // 
@@ -450,12 +386,13 @@ namespace WorkersFormsManager
             this.WorkerNameTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.WorkerNameTb.Depth = 0;
             this.WorkerNameTb.Font = new System.Drawing.Font("Roboto", 12F);
-            this.WorkerNameTb.Location = new System.Drawing.Point(208, 38);
+            this.WorkerNameTb.Location = new System.Drawing.Point(277, 47);
+            this.WorkerNameTb.Margin = new System.Windows.Forms.Padding(4);
             this.WorkerNameTb.MaxLength = 50;
             this.WorkerNameTb.MouseState = MaterialSkin.MouseState.OUT;
             this.WorkerNameTb.Multiline = false;
             this.WorkerNameTb.Name = "WorkerNameTb";
-            this.WorkerNameTb.Size = new System.Drawing.Size(167, 50);
+            this.WorkerNameTb.Size = new System.Drawing.Size(223, 50);
             this.WorkerNameTb.TabIndex = 8;
             this.WorkerNameTb.Text = "";
             // 
@@ -463,9 +400,10 @@ namespace WorkersFormsManager
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(61, 12);
+            this.label2.Location = new System.Drawing.Point(81, 15);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 24);
+            this.label2.Size = new System.Drawing.Size(120, 29);
             this.label2.TabIndex = 7;
             this.label2.Text = "Worker ID";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -475,12 +413,13 @@ namespace WorkersFormsManager
             this.WorkerIdTb.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.WorkerIdTb.Depth = 0;
             this.WorkerIdTb.Font = new System.Drawing.Font("Roboto", 12F);
-            this.WorkerIdTb.Location = new System.Drawing.Point(16, 38);
+            this.WorkerIdTb.Location = new System.Drawing.Point(21, 47);
+            this.WorkerIdTb.Margin = new System.Windows.Forms.Padding(4);
             this.WorkerIdTb.MaxLength = 50;
             this.WorkerIdTb.MouseState = MaterialSkin.MouseState.OUT;
             this.WorkerIdTb.Multiline = false;
             this.WorkerIdTb.Name = "WorkerIdTb";
-            this.WorkerIdTb.Size = new System.Drawing.Size(167, 50);
+            this.WorkerIdTb.Size = new System.Drawing.Size(223, 50);
             this.WorkerIdTb.TabIndex = 6;
             this.WorkerIdTb.Text = "";
             this.WorkerIdTb.TextChanged += new System.EventHandler(this.WorkerIdTb_TextChanged);
@@ -488,9 +427,10 @@ namespace WorkersFormsManager
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(16, 12);
+            this.pictureBox4.Location = new System.Drawing.Point(21, 15);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(63, 65);
+            this.pictureBox4.Size = new System.Drawing.Size(84, 80);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 5;
             this.pictureBox4.TabStop = false;
@@ -500,24 +440,26 @@ namespace WorkersFormsManager
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("MS Reference Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label10.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label10.Location = new System.Drawing.Point(981, 9);
+            this.label10.Location = new System.Drawing.Point(1308, 11);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(26, 26);
+            this.label10.Size = new System.Drawing.Size(34, 34);
             this.label10.TabIndex = 6;
             this.label10.Text = "X";
             this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // Worker
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkGray;
-            this.ClientSize = new System.Drawing.Size(1019, 537);
+            this.ClientSize = new System.Drawing.Size(1359, 661);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Worker";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Worker";
@@ -543,14 +485,10 @@ namespace WorkersFormsManager
         private MaterialSkin.Controls.MaterialTextBox WorkerNameTb;
         private System.Windows.Forms.Label label2;
         private MaterialSkin.Controls.MaterialTextBox WorkerIdTb;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private MaterialSkin.Controls.MaterialComboBox WorkerEduCb;
         private System.Windows.Forms.DateTimePicker WorkersDOB;
         private MaterialSkin.Controls.MaterialComboBox WorkerSeatCb;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label9;
-        private MaterialSkin.Controls.MaterialComboBox WorkerGenderCb;
         private MaterialSkin.Controls.MaterialButton materialButton4;
         private MaterialSkin.Controls.MaterialButton materialButton3;
         private MaterialSkin.Controls.MaterialButton materialButton2;

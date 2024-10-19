@@ -17,7 +17,7 @@ namespace WorkersFormsManager
         {
             InitializeComponent();
         }
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Program Files (x86)\Hexyzen\Worker_Manager\WorkerDB.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Program Files (x86)\Roman Kostiuk\Worker Manager\WorkerDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void WorkerData()
         {
@@ -28,7 +28,7 @@ namespace WorkersFormsManager
             else
             {
                 Con.Open();
-                string query = "select * from WorkerTbl where WorkerID = '" + WorkerIdTb.Text + "'";
+                string query = "select * from Worker where WorkerID = '" + WorkerIdTb.Text + "'";
                 SqlCommand cmd = new SqlCommand(query, Con);
                 DataTable dataTable = new DataTable();
                 SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -62,7 +62,7 @@ namespace WorkersFormsManager
 
         private void materialButton4_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
+            Home home = new Home(isAdmin: true);
             home.Show();
             this.Hide();
         }
@@ -139,6 +139,11 @@ namespace WorkersFormsManager
         }
 
         private void WorkerNameTb_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void WorkerIdTb_TextChanged(object sender, EventArgs e)
         {
 
         }

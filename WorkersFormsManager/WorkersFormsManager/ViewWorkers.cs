@@ -18,12 +18,12 @@ namespace WorkersFormsManager
             InitializeComponent();
         }
 
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Program Files (x86)\Hexyzen\Worker_Manager\WorkerDB.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Program Files (x86)\Roman Kostiuk\Worker Manager\WorkerDB.mdf;Integrated Security=True;Connect Timeout=30");
 
         private void WorkerData()
         {
             Con.Open();
-            string query = "select * from WorkerTbl where WorkerID = '" + WorkerIdTb.Text + "'";
+            string query = "select * from Worker where WorkerID = '" + WorkerIdTb.Text + "'";
             SqlCommand cmd = new SqlCommand(query, Con);
             DataTable dataTable = new DataTable();
             SqlDataAdapter sda = new SqlDataAdapter(cmd);
@@ -35,16 +35,12 @@ namespace WorkersFormsManager
                 WorkAddlbl.Text = dr["WorkerAddress"].ToString();
                 WorkSeatlbl.Text = dr["WorkerSeat"].ToString();
                 WorkPhonelbl.Text = dr["WorkerPhone"].ToString();
-                WorkEdulbl.Text = dr["WorkerEdu"].ToString();
-                WorkGenlbl.Text = dr["WorkerGen"].ToString();
                 WorkDoblbl.Text = dr["WorkerDOB"].ToString();
                 WorkIdlbl.Visible = true;
                 WorkNamelbl.Visible = true;
                 WorkAddlbl.Visible = true;
                 WorkSeatlbl.Visible = true;
                 WorkPhonelbl.Visible = true;
-                WorkEdulbl.Visible = true;
-                WorkGenlbl.Visible = true;
                 WorkDoblbl.Visible = true;
             }
             Con.Close();
@@ -81,7 +77,7 @@ namespace WorkersFormsManager
                 try
                 {
                     Con.Open();
-                    string query = "delete from WorkerTbl where WorkerId='" + WorkerIdTb.Text + "';";
+                    string query = "delete from Worker where WorkerId='" + WorkerIdTb.Text + "';";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Worker deleted");
@@ -108,7 +104,7 @@ namespace WorkersFormsManager
 
         private void materialButton4_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
+            Home home = new Home(isAdmin: true);
             home.Show();
             this.Hide();
         }
@@ -130,10 +126,15 @@ namespace WorkersFormsManager
         {
             e.Graphics.DrawString("======= WORKERS SUMMARY ======= ", new Font("Century Gothic", 20, FontStyle.Bold), Brushes.Black, new Point(180));
             e.Graphics.DrawString("Worker ID:" + WorkerIdTb.Text+"\tName:" + WorkNamelbl.Text, new Font("Century Gothic", 18, FontStyle.Bold), Brushes.Black, new Point(10,100));
-            e.Graphics.DrawString("Address:" + WorkAddlbl.Text + "\tGender:" + WorkGenlbl.Text, new Font("Century Gothic", 18, FontStyle.Bold), Brushes.Black, new Point(10,140));
+            e.Graphics.DrawString("Address:" + WorkAddlbl.Text, new Font("Century Gothic", 18, FontStyle.Bold), Brushes.Black, new Point(10,140));
             e.Graphics.DrawString("Seat:" + WorkSeatlbl.Text + "\tDate of birth:" + WorkDoblbl.Text, new Font("Century Gothic", 18, FontStyle.Bold), Brushes.Black, new Point(10,180));
-            e.Graphics.DrawString("Phone:" + WorkPhonelbl.Text + "\tEducation:" + WorkEdulbl.Text, new Font("Century Gothic", 18, FontStyle.Bold), Brushes.Black, new Point(10,220));
+            e.Graphics.DrawString("Phone:" + WorkPhonelbl.Text, new Font("Century Gothic", 18, FontStyle.Bold), Brushes.Black, new Point(10,220));
             e.Graphics.DrawString("======= HEXYZEN ======= ", new Font("Century Gothic", 20, FontStyle.Bold), Brushes.Red, new Point(180,280));
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

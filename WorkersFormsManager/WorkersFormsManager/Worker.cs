@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace WorkersFormsManager
 {
@@ -17,7 +11,7 @@ namespace WorkersFormsManager
         {
             InitializeComponent();
         }
-        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Program Files (x86)\Hexyzen\Worker_Manager\WorkerDB.mdf;Integrated Security=True;Connect Timeout=30");
+        SqlConnection Con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Program Files (x86)\Roman Kostiuk\Worker Manager\WorkerDB.mdf;Integrated Security=True;Connect Timeout=30");
         private void label2_Click(object sender, EventArgs e)
         {
 
@@ -49,7 +43,7 @@ namespace WorkersFormsManager
                 try
                 {
                     Con.Open();
-                    string query = "insert into WorkerTbl values('" + WorkerIdTb.Text + "','" + WorkerNameTb.Text + "','" + WorkerAddressTb.Text + "','" + WorkerSeatCb.SelectedItem.ToString() + "','" + WorkersDOB.Value.Date + "','" + WorkerPhoneTb.Text + "','" + WorkerEduCb.SelectedItem.ToString() + "', '"+WorkerGenderCb.SelectedItem.ToString()+"')";
+                    string query = "insert into Worker values('" + WorkerIdTb.Text + "','" + WorkerNameTb.Text + "','" + WorkerAddressTb.Text + "','" + WorkerSeatCb.SelectedItem.ToString() + "','" + WorkersDOB.Value.Date + "','" + WorkerPhoneTb.Text + "')";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Worker Added");
@@ -79,7 +73,7 @@ namespace WorkersFormsManager
         private void populate()
         {
             Con.Open();
-            string query = "select * from WorkerTbl";
+            string query = "select * from Worker";
             SqlDataAdapter sda = new SqlDataAdapter(query, Con);
             SqlCommandBuilder builder = new SqlCommandBuilder(sda);
             var ds = new DataSet();
@@ -107,7 +101,7 @@ namespace WorkersFormsManager
                 try
                 {
                     Con.Open();
-                    string query = "delete from WorkerTbl where WorkerId='" + WorkerIdTb.Text + "';";
+                    string query = "delete from Worker where WorkerId='" + WorkerIdTb.Text + "';";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Worker deleted");
@@ -137,11 +131,8 @@ namespace WorkersFormsManager
             WorkerIdTb.Text = WorkerDGV.SelectedRows[0].Cells[0].Value.ToString();
             WorkerNameTb.Text = WorkerDGV.SelectedRows[0].Cells[1].Value.ToString();
             WorkerAddressTb.Text = WorkerDGV.SelectedRows[0].Cells[2].Value.ToString();
-            WorkerEduCb.Text = WorkerDGV.SelectedRows[0].Cells[6].Value.ToString();
             WorkerSeatCb.Text = WorkerDGV.SelectedRows[0].Cells[3].Value.ToString();
             WorkerPhoneTb.Text = WorkerDGV.SelectedRows[0].Cells[5].Value.ToString();
-            WorkerGenderCb.Text = WorkerDGV.SelectedRows[0].Cells[7].Value.ToString();
-
         }
 
         private void materialButton2_Click(object sender, EventArgs e)
@@ -155,7 +146,7 @@ namespace WorkersFormsManager
                 try
                 {
                     Con.Open();
-                    string query = "update WorkerTbl set WorkerName='" +WorkerNameTb.Text+ "', WorkerAddress = '" + WorkerAddressTb.Text + "',WorkerSeat = '" + WorkerSeatCb.SelectedItem.ToString() + "', WorkerDOB = '" + WorkersDOB.Value.Date + "', WorkerPhone = '" + WorkerPhoneTb.Text + "',WorkerEdu = '" + WorkerEduCb.SelectedItem.ToString() + "', WorkerGen = '" + WorkerGenderCb.SelectedItem.ToString() + "' where WorkerId='" +WorkerIdTb.Text+"';";
+                    string query = "update Worker set WorkerName='" +WorkerNameTb.Text+ "', WorkerAddress = '" + WorkerAddressTb.Text + "',WorkerSeat = '" + WorkerSeatCb.SelectedItem.ToString() + "', WorkerDOB = '" + WorkersDOB.Value.Date + "', WorkerPhone = '" + WorkerPhoneTb.Text + "' where WorkerId='" +WorkerIdTb.Text+"';";
                     SqlCommand cmd = new SqlCommand(query, Con);
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("Worker Updated");
@@ -176,9 +167,19 @@ namespace WorkersFormsManager
 
         private void materialButton4_Click(object sender, EventArgs e)
         {
-            Home home = new Home();
+            Home home = new Home(isAdmin: true);
             home.Show();
             this.Hide();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
